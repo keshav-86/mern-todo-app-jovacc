@@ -7,7 +7,7 @@ pipeline {
   }
 
   environment {
-    SONAR_TOKEN = credentials('sonar-project-token')   // use your credential ID from Jenkins
+    SONAR_TOKEN = credentials('Sonar_token')   // use your credential ID from Jenkins
     NEXUS_CREDS = credentials('nexus-creds')           // must match ID in Jenkins
     NEXUS_URL = "http://localhost:8081"
     NEXUS_REPO = "raw-release"
