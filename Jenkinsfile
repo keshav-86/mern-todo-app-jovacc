@@ -54,13 +54,14 @@ pipeline {
       }
     }
 
-    stage('sonar Quality gates'){
-      steps{
-       
-          waitForQualityGate abortPipeline:true
-        
-      }
+   stage('Wait for Quality Gate') {
+  steps {
+    timeout(time: 3, unit: 'MINUTES') {
+      waitForQualityGate abortPipeline: true
     }
+  }
+}
+
 
     stage('Package Artifacts') {
       steps {
